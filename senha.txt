@@ -1,0 +1,3 @@
+senha banco de dados: FBTCgIvoI4YM6aGB
+
+Seu endereço IP atual ( 187.16.241.8 ) foi adicionado para habilitar a conectividade local. Somente um endereço IP adicionado à sua Lista de Acesso poderá se conectar aos clusters do seu projeto. 
