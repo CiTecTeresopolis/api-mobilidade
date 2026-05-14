@@ -102,7 +102,7 @@ export class AuthService {
         });
 
       if (!dbError) {
-        const confirmLink = `https://pilgrimatic-nita-scenographically.ngrok-free.dev/api/auth/confirm-email?token=${token}`;
+        const confirmLink = `https://api-mobilidade.vercel.app/api/auth/confirm-email?token=${token}`;
 
         try {
           await this.emailService.sendConfirmationEmail(
@@ -243,7 +243,7 @@ export class AuthService {
       throw new BadRequestException(`Erro no banco: ${dbError.message}`);
     }
 
-    const ngrokUrl = 'https://pilgrimatic-nita-scenographically.ngrok-free.dev';
+    const ngrokUrl = 'https://api-mobilidade.vercel.app';
     // O final da URL DEVE ser ?token= e não ?userId=
     const confirmLink = `${ngrokUrl}/api/auth/confirm-email?token=${token}`;
 
