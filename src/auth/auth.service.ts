@@ -102,7 +102,9 @@ export class AuthService {
         });
 
       if (!dbError) {
-        const confirmLink = `https://api-mobilidade.vercel.app/api/auth/confirm-email?token=${token}`;
+        const baseUrl = process.env.API_URL || 'https://api-mobilidade.vercel.app';
+        const confirmLink = `${baseUrl}/api/auth/confirm-email?token=${token}`;
+        
 
         try {
           await this.emailService.sendConfirmationEmail(
@@ -243,9 +245,9 @@ export class AuthService {
       throw new BadRequestException(`Erro no banco: ${dbError.message}`);
     }
 
-    const ngrokUrl = 'https://api-mobilidade.vercel.app';
+    const baseUrl = process.env.API_URL || 'https://api-mobilidade.vercel.app';
     // O final da URL DEVE ser ?token= e não ?userId=
-    const confirmLink = `${ngrokUrl}/api/auth/confirm-email?token=${token}`;
+    const confirmLink = `${baseUrl}/api/auth/confirm-email?token=${token}`;
 
     await this.emailService.sendDriverConfirmationEmail(
       emailLimpo,
