@@ -24,7 +24,7 @@ import { AuthService } from './auth.service';
 import { SupabaseService } from '../supabase/supabase.service'; // Certifique-se que o caminho está correto
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { RegisterUserDto } from '../users/dtos/register-user.dto';
-import { LoginDto } from 'src/users/dtos/login.dto';
+import { LoginDto } from '../users/dtos/login.dto';
 
 @Controller('auth')
 export class AuthController {
